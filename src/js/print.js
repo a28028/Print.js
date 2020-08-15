@@ -48,6 +48,10 @@ const Print = {
 function performPrint (iframeElement, params) {
   try {
     iframeElement.focus()
+    if( params.type == 'html' &&  params.onOuterHTML){
+        params.onOuterHTML(iframeElement.contentWindow.document.documentElement.outerHTML);
+        return;
+    }
 
     // If Edge or IE, try catch with execCommand
     if (Browser.isEdge() || Browser.isIE()) {

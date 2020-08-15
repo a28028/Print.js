@@ -45,7 +45,8 @@ export default {
       css: null,
       style: null,
       scanStyles: true,
-      base64: false
+      base64: false,
+      onOuterHTML : null
     }
 
     // Check if a printable document or object was supplied

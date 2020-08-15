@@ -52,6 +52,16 @@
         type: 'html'
       })
     }
+    function getHtml() {
+      var onOuterHTML = function( html){
+        console.log(html);
+      }
+      printJS({
+        printable: 'test',
+        type: 'html',
+        onOuterHTML: onOuterHTML
+      })
+    }
 
     function printRawHtml() {
       printJS({
@@ -244,6 +254,10 @@
         <button onClick='printHtml();'>
           Print HTML
         </button>
+        <button onClick='getHtml();'>
+          get HTML
+        </button>
+        
         <button onClick='printHtmlCustomStyle();'>
           Print HTML with custom style
         </button>
